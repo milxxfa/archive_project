@@ -5,22 +5,78 @@
     <meta name="author" content="Олександра">
     <title>Бібліотека - Книги</title>
 </head>
-<body>
+<body bgcolor="#FFF8E1">
     <h1>Наші Книги</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="books.html">Книги</a></li>
-            <li><a href="about.html">Про бібліотеку</a></li>
-            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="index.html" style="color: rgb(255, 20, 20);">Головна</a></li>
+            <li><a href="books.html" style="color: rgb(255, 110, 20);">Книги</a></li>
+            <li><a href="about.html" style="color: rgb(63, 255, 20);">Про бібліотеку</a></li>
+            <li><a href="contact.html" style="color: rgb(57, 138, 219);">Контакти</a></li>
         </ul>
     </nav>
     <p>Ознайомтесь з нашим багатим асортиментом книг:</p>
-    <ul>
+    <ol>
         <li>«Атомні звички» - Джеймс Клір</li>
         <li>«Я бачу, вас цікавить пітьма» - Ілларіон Павлюк</li>
         <li>«П'ятеро поросят» - Аґата Крісті</li>
         <li>«Тіні забутих предків» - Михайло Коцюбинський</li>
-    </ul>
+    </ol>
+
+    <table border="1" style="text-align: center; border-collapse: collapse">
+        <thead style="background-color: #8B4513; color: rgb(255, 255, 255);">
+            <tr>
+                <th>Книга</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+                <th>Деталі</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="./img/book1.jpg" target="_blank"><img src="./img/book1.jpg" alt="Книга 1" width="50"></a></td>
+                <td><a href="./img/author1.jpg" target="_blank"><img src="./img/author1.jpg" alt="Автор 1" width="50"></a></td>
+                <td><a href="./img/genre1.jpg" target="_blank"><img src="./img/genre1.jpg" alt="Жанр 1" width="50"></a></td>
+                <td><a href="./img/1.jpeg" target="_blank"><img src="./img/1.jpeg" alt="Бібліотека" width="50"></a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.ukrlib.com.ua/books/printit.php?tid=3545#google_vignette">"Кобзар"</a></td>
+                <td><a href="https://uk.wikipedia.org/wiki/Шевченко_Тарас_Григорович">Тарас Шевченко</a></td>
+                <td><a href="https://osvitanova.com.ua/posts/4740-27-naipopuliarnishykh-poezii-tarasa-shevchenka">Поезія</a></td>
+                <td><a href="https://example.com/library">Каталог бібліотеки</a></td>
+            </tr>
+            <tr>
+                <td>Відома збірка поезій, класика української літератури.</td>
+                <td>Видатний український поет, художник та громадський діяч.</td>
+                <td>Літературний жанр, що виражає думки та емоції через римовані рядки.</td>
+                <td>Бібліотека містить тисячі книжок різних жанрів і напрямків.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="1" cellpadding="10" cellspacing="5">
+        <colgroup>
+            <col style="background-color: lightgray;">
+            <col>
+            <col style="background-color: lightblue;">
+        </colgroup>
+        <tr>
+            <th colspan="3" class="center-text">Бібліотека</th>
+        </tr>
+        <tr>
+            <th>Автор</th>
+            <th>Назва книги</th>
+            <th>Рік видання</th>
+        </tr>
+        <tr>
+            <td rowspan="2" class="left-text">Тарас Шевченко</td>
+            <td class="center-text">Кобзар</td>
+            <td class="right-text">1840</td>
+        </tr>
+        <tr>
+            <td colspan="1" class="center-text">Збірка поезій</td>
+        </tr>
+    </table>
+
 </body>
 </html>
