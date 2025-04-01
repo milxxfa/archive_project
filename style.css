@@ -115,13 +115,6 @@ button:hover {
     background-color: #005f73;
 }
 
-blockquote {
-    font-style: italic;
-    color: #555;
-    border-left: 4px solid #008CBA;
-    padding-left: 10px;
-    margin: 10px 0;
-}
 
 .container p {
     font-size: 18px;
