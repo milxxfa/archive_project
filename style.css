@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+header {
+    background-color: #858585;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    width: 100%
+}
+
 body {
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
@@ -7,7 +27,9 @@ body {
     line-height: 1.6;
     text-align: justify;
     background-color: #f4f4f4;
-    
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -17,7 +39,33 @@ body {
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    position: relative; 
+    top: 170px;
     
+}
+
+.sidebar {
+    width: 25%;
+    float: left;
+    background-color: #ddd;
+    padding: 20px 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+
+}
+
+.sidebar a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 6px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,7 +98,7 @@ a {
 }
 
 a:hover {
-    color: red !important;
+    color: rgb(0, 174, 255) !important;
     text-decoration: underline;
 }
 
@@ -60,6 +108,8 @@ ul {
     padding-left: 40px;
     color: #555;
 }
+
+
 
 ol {
     list-style-type: decimal;
@@ -89,35 +139,10 @@ th {
     text-transform: uppercase;
 }
 
-
-button {
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #005f73;
-}
-
-
-.container p {
-    font-size: 18px;
-    color: #282b2b;
-    line-height: 1.8;
-    transition: color 0.3s ease;
-    margin-bottom: 15px;
-}
-
-h1 + p {
+.highlight {
+    color: red;
     font-weight: bold;
-    color: darkblue !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: yellow;
 }
 
 ul > li {
@@ -139,5 +164,25 @@ table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+a:link {
+    color: rgb(255, 0, 128);
+    text-decoration: none;
+}
 
+a:visited {
+    color: purple;
+}
 
+h1::before {
+    content: "♥ ";  
+    color: black;
+}
+
+h1::after {
+    content: " ♥";  
+    color: black;
+}
+
+ul li:first-child {
+    text-decoration: line-through; 
+}
