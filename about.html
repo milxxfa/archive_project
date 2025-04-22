@@ -20,6 +20,7 @@
         </ul>
     </nav>
 
+    <div class="dom">Тут буде змінено вміст</div>
 
     <p><b>Наша бібліотека існує понад 50 років та надає доступ до тисяч книг, журналів та електронних ресурсів.</b></p>
 
@@ -39,6 +40,24 @@
     <p>Перейдіть до <a href="index.html">головної сторінки</a>, щоб дізнатися більше про нашу бібліотеку.</p>
 
 </div>
+
+<script>
+    alert("Вітаємо на сторінці!");
+    let name = prompt("Як вас звати?");
+    let isStudent = confirm("Ви студент?");
+
+    if (isStudent) {
+        alert("Привіт, студент " + name + "!");
+    } else {
+        alert("Привіт, " + name + "!");
+    }
+</script>
+<script>
+    const dom = document.querySelector('.dom')
+    dom.innerHTML = "<b>Жирний</b>";
+    dom.outerHTML = "<h2>Новий заголовок</h2>"
+    dom.textContent = "Цей текст без тегів"
+</script>
 
 </body>
 </html>
