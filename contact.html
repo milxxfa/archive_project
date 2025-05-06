@@ -19,8 +19,11 @@
             <li><a href="contact.html" style="color: rgb(57, 138, 219);">Контакти</a></li>
         </ul>
     </nav>
+    <button id="btn3">Click object</button>
+    <button id="btn4">Remove</button>
+
     <p>Зв'яжіться з нами:</p>
-    <ul>
+    <ul id="myList">
         <li>Email: library@example.com</li>
         <li>Телефон: +380 124 353 289</li>
         <li>Адреса: Берестейський проспект, 37, Київ</li>
@@ -28,11 +31,33 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20322.845855072137!2d30.4560898!3d50.4531001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce82b9bc8a47%3A0x47514e5d91216bf3!2z0JrQuNGX0LLRgdGM0LrQuNC5INC_0L7Qu9GW0YLQtdGF0L3RltGH0L3QuNC5INGW0L3RgdGC0LjRgtGD0YIg0ZbQvNC10L3RliDQhtCz0L7RgNGPINCh0ZbQutC-0YDRgdGM0LrQvtCz0L4!5e0!3m2!1suk!2sua!4v1739829115325!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <script>
-    document.body.style.backgroundColor = "lightblue";
-    setTimeout(() => {
-        document.body.style.backgroundColor = "white";
-    }, 30000);
+    const list = document.getElementById('myList');
+    list.onclick = function(event) {
+        if (event.target.tagName === 'LI') {
+            event.target.style.backgroundColor = 'lightblue';
+        }
+    };
 </script>
-<script>setTimeout(() => location.href = "https://www.google.com", 10000);</script>
+<script>
+    let btn3 = document.getElementById("btn3");
+
+    let handlerObj = {
+        handleEvent(event) {
+            alert(`Привіт! Element: ${event.currentTarget.tagName}`);
+        },
+    };
+
+    btn3.addEventListener("click", handlerObj);
+</script>
+<script>
+    let btn4 = document.getElementById("btn4");
+    const hello = () => alert("Hello!");
+    btn4.addEventListener("click", hello);
+    
+    setTimeout(() => {
+        btn4.removeEventListener("click", hello);
+        alert("Обробник видалено!");
+    }, 10000);
+</script>
 </body>
 </html>

@@ -190,6 +190,4 @@ h1::after {
     color: black;
 }
 
-ul li:first-child {
-    text-decoration: line-through; 
-}
+

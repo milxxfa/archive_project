@@ -10,10 +10,12 @@
 <body>
     <header class="header">
        <h1>Ласкаво просимо до нашої Бібліотеки</h1>
-       <button onclick="userDialog()">Запустити діалог</button>
     </header>
 <div class="container">
     <p>Знаходьте свої улюблені книги та відкривайте нові знання разом з нами!</p>
+    <button onclick="handleClick()">Атрибут</button>
+    <button id="btn1">Властивість</button>
+
     <nav>
         <ul>
             <li><a href="index.html" style="color: rgb(255, 28, 20);">Головна</a></li>
@@ -36,6 +38,30 @@
     </div>
 </div>
 
-<script src="dialog.js"></script>  
+<script>
+    function handleClick() {
+        alert("Тиц тиц");
+      }      
+</script>
+<script>
+    const btn1 = document.getElementById('btn1');
+    btn1.onclick = function() {
+        alert("Обробник через властивість!");
+};
+</script>
+
+<script>
+    const btn = document.getElementById('btn1');
+    function handler1() {
+        console.log("Обробник 1");
+    }
+    function handler2() {
+        console.log("Обробник 2");
+    }
+
+    btn.addEventListener('click', handler1);
+    btn.addEventListener('click', handler2);
+
+</script>
 </body>
 </html>

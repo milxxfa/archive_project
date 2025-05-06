@@ -19,8 +19,12 @@
             <li><a href="contact.html" style="color: rgb(57, 138, 219);" >Контакти</a></li>
         </ul>
     </nav>
-
-    <div class="dom">Тут буде змінено вміст</div>
+    <div id="menu">
+        <button data-action="sayHello">Hello</button>
+        <button data-action="sayBye">Goodbye</button>
+        <button data-action="showTime">Show time</button>
+      </div>
+      
 
     <p><b>Наша бібліотека існує понад 50 років та надає доступ до тисяч книг, журналів та електронних ресурсів.</b></p>
 
@@ -40,24 +44,22 @@
     <p>Перейдіть до <a href="index.html">головної сторінки</a>, щоб дізнатися більше про нашу бібліотеку.</p>
 
 </div>
-
 <script>
-    alert("Вітаємо на сторінці!");
-    let name = prompt("Як вас звати?");
-    let isStudent = confirm("Ви студент?");
-
-    if (isStudent) {
-        alert("Привіт, студент " + name + "!");
-    } else {
-        alert("Привіт, " + name + "!");
+    const menu = document.getElementById("menu");
+  
+    menu.addEventListener("click", setMenu);
+  
+    function setMenu(e) {
+      let action = e.target.dataset.action;
+  
+      let actions = {
+        sayHello: () => alert("Привіт!"),
+        sayBye: () => alert("До побачення!"),
+        showTime: () => alert(new Date().toLocaleTimeString()),
+      };
+  
+      if (actions[action]) actions[action]();
     }
-</script>
-<script>
-    const dom = document.querySelector('.dom')
-    dom.innerHTML = "<b>Жирний</b>";
-    dom.outerHTML = "<h2>Новий заголовок</h2>"
-    dom.textContent = "Цей текст без тегів"
-</script>
-
+  </script>
 </body>
 </html>

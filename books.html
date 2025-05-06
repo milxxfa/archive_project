@@ -19,7 +19,6 @@
             <li><a href="contact.html" style="color: rgb(57, 138, 219);">Контакти</a></li>
         </ul>
     </nav>
-    <button onclick="compareStrings()">Порівняти рядки</button>
     <ol>
         <li>«Атомні звички» - Джеймс Клір</li>
         <li>«Я бачу, вас цікавить пітьма» - Ілларіон Павлюк</li>
@@ -83,45 +82,6 @@
         </tr>
     </table>
 </div>
-<script src="compare.js"></script>  
-<script>
-    document.getElementById("title").textContent = "Оновлений заголовок!";
-</script>
-<script>
-    const paragraphs = document.querySelectorAll("li");
-        paragraphs.forEach(p => p.style.color = "green");
-</script>
-<script>
-
-    document.write("<h2>Цей текст вставлено через document.write</h2>");
-
-    const newPara = document.createElement("p");
-    const newText = document.createTextNode("Це новий абзац, доданий скриптом.");
-    newPara.appendChild(newText); // додаємо текст до абзацу
-  
-    // додаємо в кінець
-    document.querySelector(".container").append(newPara);
-  
-    //додаємо заголовок на початок container
-    const heading = document.createElement("h2");
-    heading.textContent = "Список доступних книг";
-    document.querySelector(".container").prepend(heading);
-  
-    //додаємо елемент після заголовка
-    const hr = document.createElement("hr");
-    document.querySelector("#title").after(hr);
-  
-    //замінюємо перший пункт списку
-    const newListItem = document.createElement("li");
-    newListItem.textContent = "«Місто» - Валер'ян Підмогильний";
-    const firstLi = document.querySelector("ol li");
-    firstLi.replaceWith(newListItem);
-  
-   
-    const lastTableRow = document.querySelector("table tbody tr:last-child");
-    lastTableRow.remove();
-  </script>
-  
 
 </body>
 </html>
