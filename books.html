@@ -25,7 +25,8 @@
         <li>«П'ятеро поросят» - Аґата Крісті</li>
         <li>«Тіні забутих предків» - Михайло Коцюбинський</li>
     </ol>
-    
+    <div class="box" id="hoverBox">Наведення</div>
+    <div class="drag-item" id="dragItem">Перенесення</div>
 
     <table border="1" style="text-align: center; border-collapse: collapse">
         <thead style="background-color: #8B4513; color: rgb(255, 255, 255);">
@@ -83,5 +84,58 @@
     </table>
 </div>
 
+<script>
+    let box = document.getElementById("hoverBox");
+    
+    box.addEventListener("mouseover", setMouseOver);
+    box.addEventListener("mouseout", setMouseOut);
+    
+    function setMouseOut(event) {
+      event.target.style.backgroundColor = "lightgray";
+      console.log("Курсор вийшов з:", event.target);
+      console.log("Перейшов на:", event.relatedTarget);
+
+      setTimeout(() => {
+        event.target.style.backgroundColor = ""; 
+      }, 2000);
+    }
+      
+    function setMouseOver(event) {
+      event.target.style.backgroundColor = "lightblue";
+      console.log("Курсор увійшов у:", event.target);
+      console.log("Звідки прийшов:", event.relatedTarget);
+    }
+</script>
+<script>
+    let item = document.getElementById("dragItem");
+    
+    item.addEventListener("mousedown", drag);
+    
+    function drag(event) {
+      let shiftX = event.clientX - item.getBoundingClientRect().left;
+      let shiftY = event.clientY - item.getBoundingClientRect().top;
+    
+      item.style.position = "absolute";
+      item.style.zIndex = 1000;
+      document.body.append(item);
+    
+      function moveAt(pageX, pageY) {
+        item.style.left = pageX - shiftX + "px";
+        item.style.top = pageY - shiftY + "px";
+      }
+    
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+      }
+    
+      moveAt(event.pageX, event.pageY);
+    
+      document.addEventListener("mousemove", onMouseMove);
+    
+      item.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", onMouseMove);
+      });
+    }
+</script>
 </body>
 </html>
